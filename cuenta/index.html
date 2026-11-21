@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>Cuenta ChilePatitas</title>
+<link rel="icon" href="https://boobfmzftzyivclruebh.supabase.co/storage/v1/object/public/avatars/logo_IA.png">
+<style>
+:root{--bg:#F1FAFC;--card:#FFFFFF;--ink:#00304E;--muted:#4A90A4;--brand:#046C8D;--head:#01344F;--head-sub:#AAD9E3;--soft:#EBF7F8;--ok:#1E8E5A;--warn:#B26A00;--err:#B3261E}
+@media(prefers-color-scheme:dark){:root{--bg:#0B1A22;--card:#12262F;--ink:#E3F2F6;--muted:#8CC3D1;--brand:#5CC3E0;--head:#01344F;--head-sub:#AAD9E3;--soft:#0F2029;--ok:#5FD39A;--warn:#F2B45C;--err:#F2918A}}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.6;min-height:100vh;padding:24px 16px}
+.card{max-width:520px;margin:0 auto;background:var(--card);border-radius:20px;overflow:hidden;box-shadow:0 6px 24px rgba(1,52,79,.10)}
+header{background:var(--head);text-align:center;padding:28px 24px}
+header img{width:88px;height:88px;border-radius:50%;background:#fff;padding:10px;display:block;margin:0 auto}
+header .name{margin:12px 0 0;color:#fff;font-size:22px;font-weight:700}
+header .tag{margin:4px 0 0;color:var(--head-sub);font-size:13px}
+main{padding:28px 24px 8px}
+.icon{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 12px;background:var(--soft)}
+h1{font-size:21px;text-align:center;margin:0 0 8px}
+.lead{text-align:center;margin:0 0 20px;color:var(--ink)}
+.ok h1{color:var(--ok)}.warn h1{color:var(--warn)}.err h1{color:var(--err)}
+ol{background:var(--soft);border-radius:14px;padding:16px 16px 16px 36px;margin:0 0 16px}
+ol li{margin:4px 0}
+.detail{font-size:13px;color:var(--muted);background:var(--soft);border-radius:10px;padding:10px 12px;word-break:break-word}
+.hint{font-size:13px;color:var(--muted);text-align:center;margin:0 0 8px}
+footer{padding:16px 24px 24px;font-size:12px;color:var(--muted);text-align:center;border-top:1px solid var(--soft);margin-top:16px}
+a{color:var(--brand)}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="card">
+  <header>
+    <img src="https://boobfmzftzyivclruebh.supabase.co/storage/v1/object/public/avatars/logo_IA.png" alt="ChilePatitas" width="88" height="88">
+    <p class="name">ChilePatitas 🐾</p>
+    <p class="tag">Encuentra y reporta mascotas perdidas</p>
+  </header>
+
+  <!-- Correo confirmado (también es la vista sin JavaScript). -->
+  <main id="s-ok" class="ok">
+    <div class="icon" aria-hidden="true">✅</div>
+    <h1 id="ok-title">¡Tu correo quedó confirmado!</h1>
+    <p class="lead">Tu cuenta de ChilePatitas ya está activa.</p>
+    <ol>
+      <li>Vuelve a la app <b>ChilePatitas</b> en tu teléfono.</li>
+      <li>Toca <b>Ingresar</b> con tu correo y contraseña.</li>
+      <li>¡Listo! Ya puedes reportar, avistar y chatear con dueños.</li>
+    </ol>
+    <p class="hint">Puedes cerrar esta página.</p>
+  </main>
+
+  <main id="s-expired" class="warn" hidden>
+    <div class="icon" aria-hidden="true">⏳</div>
+    <h1>Este enlace ya se usó o venció</h1>
+    <p class="lead">No pasa nada, tiene solución.</p>
+    <ol>
+      <li><b>Si ya confirmaste antes</b>, solo abre la app e ingresa con tu correo y contraseña.</li>
+      <li><b>Si no puedes ingresar</b>, en la pantalla de ingreso de la app toca <b>Reenviar correo de confirmación</b> y abre el enlace del correo más reciente.</li>
+    </ol>
+  </main>
+
+  <main id="s-error" class="err" hidden>
+    <div class="icon" aria-hidden="true">⚠️</div>
+    <h1>No pudimos confirmar tu correo</h1>
+    <p class="lead">Vuelve a la app y toca <b>Reenviar correo de confirmación</b> para recibir un enlace nuevo.</p>
+    <p class="detail" id="err-detail" hidden></p>
+  </main>
+
+  <main id="s-info" hidden>
+    <div class="icon" aria-hidden="true">🐾</div>
+    <h1>Cuenta ChilePatitas</h1>
+    <p class="lead">Esta página muestra el resultado cuando confirmas tu correo desde el enlace que te enviamos.</p>
+    <ol>
+      <li>Crea tu cuenta en la app ChilePatitas.</li>
+      <li>Abre el correo «Confirma tu correo» y toca <b>Confirmar mi correo</b>.</li>
+      <li>Vuelve a la app e ingresa.</li>
+    </ol>
+  </main>
+
+  <footer>
+    ¿Problemas? Escríbenos a <a href="mailto:nsotocar@gmail.com?subject=Ayuda%20con%20mi%20cuenta%20ChilePatitas">nsotocar@gmail.com</a> y te guiamos.<br>
+    <a href="../privacidad.html">Política de privacidad</a> · Con cariño, Equipo ChilePatitas 💛
+  </footer>
+</div>
+<script>
+(function () {
+  // Supabase redirige aquí tras verificar el enlace del correo, en la query
+  // (?code=… flujo PKCE, ?error=…) o en el hash (#access_token=…, #error=…).
+  var q = new URLSearchParams(location.search);
+  var h = new URLSearchParams(location.hash.replace(/^#/, ''));
+  function get(k) { return h.get(k) || q.get(k) || ''; }
+
+  var error = get('error'), code = get('error_code'), desc = get('error_description');
+  var hasParams = location.search.length > 1 || location.hash.length > 1;
+  var state;
+  if (error || code) {
+    state = (code === 'otp_expired' || /expired|invalid/i.test(desc)) ? 'expired' : 'error';
+  } else if (get('code') || get('access_token') || get('type') || get('token_hash')) {
+    state = 'ok';
+  } else {
+    state = hasParams ? 'ok' : 'info';
+  }
+
+  // Los tokens no quedan en la barra ni en el historial; no se guardan ni envían.
+  if (hasParams && history.replaceState) {
+    history.replaceState(null, '', location.pathname);
+  }
+
+  if (state === 'ok' && get('type') === 'email_change') {
+    document.getElementById('ok-title').textContent = '¡Tu nuevo correo quedó confirmado!';
+  }
+  if (state === 'error' && desc) {
+    var d = document.getElementById('err-detail');
+    d.textContent = 'Detalle: ' + desc.replace(/\+/g, ' ');
+    d.hidden = false;
+  }
+  ['ok', 'expired', 'error', 'info'].forEach(function (s) {
+    document.getElementById('s-' + s).hidden = s !== state;
+  });
+})();
+</script>
+</body>
+</html>
